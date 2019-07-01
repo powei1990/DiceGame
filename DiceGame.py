@@ -1,20 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[72]:
-
-
 import random
-banker=roll()
-player=roll()
-#print("banker")
-#print(banker)
-#print("player")
-#print(player)
-
-
-# In[68]:
-
 
 def roll():
     result=[]
@@ -22,10 +6,6 @@ def roll():
         result.append(random.randrange(1, 7))
     check(result)
     return result
-
-
-# In[65]:
-
 
 def check(result):
     for i in range(6):
@@ -43,24 +23,6 @@ def check(result):
         roll()
 
 
-# In[2]:
-
-
-def calculate(result,i):
-    temp[0:4]=result[0:4] 
-    temp.remove(i)
-    temp.remove(i)
-        
-
-
-# In[73]:
-
-
-player
-
-
-# In[ ]:
-
-
-
+banker=roll()
+player=roll()
 
