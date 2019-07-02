@@ -1,13 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 import random
-
-
-# In[ ]:
 
 
 def roll():
@@ -19,8 +11,6 @@ def roll():
         #print(score)
     return score
 
-
-# In[ ]:
 
 
 def check(point):
@@ -40,21 +30,17 @@ def check(point):
     return 0
 
 
-# In[ ]:
 
-
-def compare(matrx):
+#def compare(matrx):
     
         
 
 
-# In[ ]:
 
 
-def endgame():
+#def endgame():
 
 
-# In[ ]:
 
 
 def game_start(matrx,num_of_player):
@@ -64,8 +50,6 @@ def game_start(matrx,num_of_player):
         print("%s分"%matrx[i][0])
     #print(matrx)
 
-
-# In[ ]:
 
 
 print ("***擲骰子遊戲***")
@@ -77,13 +61,8 @@ matrx=[[0 for i in range(3)] for j in range(num_of_player)]
 game_start(matrx,num_of_player)
 
 
-# In[ ]:
 
 
-
-
-
-# In[ ]:
 
 
 
