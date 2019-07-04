@@ -8,7 +8,7 @@ def roll(player):
         print("---莊家---")
         input("按Enter擲骰")
     else:
-        print("---玩家%i---"%player)
+        print("---閒家%i---"%player)
     while not score:
 
         point=[random.choice(dice) for a in range(4)]
@@ -36,7 +36,7 @@ def check(point):
             #print(point)
             return score
             break
-    print("無效")
+    print("沒點")
     return 0
 
 
@@ -49,15 +49,15 @@ def judge(matrix,num_of_player,bet):
                 print("莊家")
                 print("%i點"%matrix[i][0])
             else:
-                print("玩家%i"%i)
+                print("閒家%i"%i)
                 print("%i點"%matrix[i][0])
-            #玩家獲勝
+            #閒家獲勝
             if matrix[i,0]>matrix[0,0]:
 
                 print("獲勝")
                 matrix[i,1]+=bet
                 matrix[0,1]-=bet
-            #玩家落敗
+            #閒家落敗
             elif matrix[i,0]<matrix[0,0]:
                 print("落敗")
                 matrix[i,1]-=bet
@@ -67,7 +67,7 @@ def judge(matrix,num_of_player,bet):
                 matrix[1:,1]-=bet
                 matrix[0,1]+=bet*num_of_player-1
                 print("莊家一色通吃")
-            #j玩家一色加倍
+            #閒家一色加倍
             elif matrix[i,0]==18:
                 matrix[i,1]+=bet*2
                 matrix[0,1]-=bet*2
@@ -80,10 +80,12 @@ def judge(matrix,num_of_player,bet):
         print("你輸了!")
         show_record(matrix,num_of_player)
         print("遊戲結束")
+        input("按Enter結束")
         return True
     elif max(matrix[1:,1])<=0:
         print("你贏了!")
         show_record(matrix,num_of_player)
+        input("按Enter結束")
         return True
     else:
         return False
@@ -100,14 +102,14 @@ def show_record(matrix,num_of_player):
         if i==0:
             print("莊家 :%d"%matrix[0][1])
         else:
-            print("玩家%i:"%i+"%d"%matrix[i][1])
+            print("閒家%i:"%i+"%d"%matrix[i][1])
         
 
 
 print ("***擲骰子遊戲***")
 win, lose = 0, 0
 dice = [i for i in range(1,7)]
-num_of_player=int(input("多少玩家:"))+1
+num_of_player=int(input("多少閒家:"))+1
 money=int(input("起始金額:"))
 #生成num_of_player列的二維list
 matrix=np.zeros((num_of_player,2))
